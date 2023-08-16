@@ -10,18 +10,26 @@ Used with Windows Subsystem for Android (WSA) On Windows 11 - Rooted w/ Magisk &
 This script successfully bypasses the root detection and allows for the SSL unpinning to occur, so the mitmproxy (or similar) can be used to view information sent to the API. 
 
 ## Example Usage (With WSA)
-- Magisk Modules - Not sure if all are necessary, but in the process of gettings this worked out I installed the following modules:
-  - [ADB Root](https://github.com/evdenis/adb_root)
-    - Allows adb root
-  - [MagiskFrida](https://github.com/ViRb3/magisk-frida)
-    - Automatically runs frida-server on boot with Magisk
-  - [MITMProxy cert](http://mitm.it/cert/magisk)
-    - Requires mitmproxy to be set up and connected to access link
-    - Automatically adds the mitmproxy certificat to the trusted system certificates
-  - Systemless Hosts
-    - Installed within Magisk app
-  - [Universal SafetyNet Fix](https://github.com/kdrag0n/safetynet-fix)
-    - SafetyNet and Play Integrity modules
+- Prerequisites
+  - [Rooted Windows Subsystem for Android w/ Google Play/Services](https://github.com/LSPosed/MagiskOnWSALocal)
+  - Installed on WSA From Playstore:
+    - Google Chrome
+    - LG ThinQ
+  - [Frida](https://frida.re/docs/installation/)
+  - [mitmproxy](https://docs.mitmproxy.org/stable/overview-installation/)
+  - Magisk Modules - Not sure if all are necessary, but in the process of gettings this worked out I installed the following modules:
+    - [ADB Root](https://github.com/evdenis/adb_root)
+      - Allows adb root
+    - [MagiskFrida](https://github.com/ViRb3/magisk-frida)
+      - Automatically runs frida-server on boot with Magisk
+    - [MITMProxy cert](http://mitm.it/cert/magisk)
+      - Requires mitmproxy to be set up and connected to access link
+      - Automatically adds the mitmproxy certificat to the trusted system certificates
+    - Systemless Hosts
+      - Installed within Magisk app
+    - [Universal SafetyNet Fix](https://github.com/kdrag0n/safetynet-fix)
+      - SafetyNet and Play Integrity modules
+- Install prerequisites and run mitmweb to view output in web-browser
 - Connect with ADB
   - `adb connect 127.0.0.1:58526`
 >```shell
@@ -35,6 +43,14 @@ This script successfully bypasses the root detection and allows for the SSL unpi
 >Starting: Intent { act=android.intent.action.MAIN cmp=com.android.settings/.Settings }
 >```
   - Go to network settings, and modify VirtWifi network and set Proxy to your `Ethernet adapter vEthernet (WSLCore)` interface IP (you can find this in powershell with `ipconfig` command) and port 8080 (or other port set)
+- Restart WSA (`Turn Off` in WSA Settings)
+- Connect with ADB again (if needed)
+- Open Google Chrome (WSA App, not your normal browser) and navigate to http://mitm.it/cert/magisk and download/setup the module in Magisk.
+  - You should also setup/enable Zygisk and Hide Magisk App now, if you haven't before
+  - `Zygisk` and `Enforce DenyList` should be enabled, and the LG app should be selected within `Configure DenyList`
+  - Select the option to hide the Magisk app, and rename it to something not containing Magisk (I chose 'My Settings')
+- Restart WSA (`Turn Off` in WSA Settings)
+- Launch Magisk App
 - Launch app with Frida script
   - `frida -l frida-rootbypass-and-sslunpinning-lg-thinq.js -U -f com.lgeha.nuts`
 ```shell
