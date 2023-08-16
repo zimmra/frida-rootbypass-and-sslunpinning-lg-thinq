@@ -55,7 +55,7 @@ This script successfully bypasses the root detection and allows for the SSL unpi
 - Launch app with Frida script
   - `frida -l frida-rootbypass-and-sslunpinning-lg-thinq.js -U -f com.lgeha.nuts`
 ```shell
-```C:\Users\USERNAME\Downloads>frida -l frida-rootbypass-and-sslunpinning-lg-thinq.js -U -f com.lgeha.nuts
+C:\Users\USERNAME\Downloads>frida -l frida-rootbypass-and-sslunpinning-lg-thinq.js -U -f com.lgeha.nuts
      ____
     / _  |   Frida 16.1.3 - A world-class dynamic instrumentation toolkit
    | (_| |
