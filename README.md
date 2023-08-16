@@ -10,7 +10,18 @@ Used with Windows Subsystem for Android (WSA) On Windows 11 - Rooted w/ Magisk &
 This script successfully bypasses the root detection and allows for the SSL unpinning to occur, so the mitmproxy (or similar) can be used to view information sent to the API. 
 
 ## Example Usage (With WSA)
-
+- Magisk Modules - Not sure if all are necessary, but in the process of gettings this worked out I installed the following modules:
+  - [ADB Root](https://github.com/evdenis/adb_root)
+    - Allows adb root
+  - [MagiskFrida](https://github.com/ViRb3/magisk-frida)
+    - Automatically runs frida-server on boot with Magisk
+  - [MITMProxy cert](http://mitm.it/cert/magisk)
+    - Requires mitmproxy to be set up and connected to access link
+    - Automatically adds the mitmproxy certificat to the trusted system certificates
+  - Systemless Hosts
+    - Installed within Magisk app
+  - [Universal SafetyNet Fix](https://github.com/kdrag0n/safetynet-fix)
+    - SafetyNet and Play Integrity modules
 - Connect with ADB
   - `adb connect 127.0.0.1:58526`
 >```shell
