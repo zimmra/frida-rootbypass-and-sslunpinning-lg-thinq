@@ -44,7 +44,8 @@ This script successfully bypasses the root detection and allows for the SSL unpi
 >Starting: Intent { act=android.intent.action.MAIN cmp=com.android.settings/.Settings }
 >```
   - Go to network settings, and modify VirtWifi network and set Proxy to your `Ethernet adapter vEthernet (WSLCore)` interface IP (you can find this in powershell with `ipconfig` command) and port 8080 (or other port set)
-    - You'll likely have to use tab/shift+tab to navigate the popup window. Rarely could I click it properly. 
+    - You'll likely have to use tab/shift+tab to navigate the popup window. Rarely could I click it properly.
+    - Your adapter may have a different name than `Ethernet adapter vEthernet (WSLCore)`
 - Restart WSA (`Turn Off` in WSA Settings)
 - Connect with ADB again (if needed)
 - Open Google Chrome (WSA App, not your normal browser) and navigate to http://mitm.it/cert/magisk and download/setup the module in Magisk.
