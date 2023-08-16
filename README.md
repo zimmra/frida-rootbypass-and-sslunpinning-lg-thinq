@@ -33,13 +33,13 @@ This script successfully bypasses the root detection and allows for the SSL unpi
 #### Steps  
 - Connect with ADB
   - `adb connect 127.0.0.1:58526`
->```shell
+>```console
 >C:\Users\USERNAME>adb connect 127.0.0.1:58526
 >connected to 127.0.0.1:58526
 >```
 - Modify Proxy Settings
   - `adb shell am start -a android.intent.action.MAIN -n com.android.settings/.Settings`
->```shell
+>```console
 >C:\Users\USERNAME>adb shell am start -a android.intent.action.MAIN -n com.android.settings/.Settings
 >Starting: Intent { act=android.intent.action.MAIN cmp=com.android.settings/.Settings }
 >```
@@ -56,7 +56,7 @@ This script successfully bypasses the root detection and allows for the SSL unpi
 - Launch Magisk App
 - Launch app with Frida script
   - `frida -l frida-rootbypass-and-sslunpinning-lg-thinq.js -U -f com.lgeha.nuts`
-```shell
+```dosbatch
 C:\Users\USERNAME\Downloads>frida -l frida-rootbypass-and-sslunpinning-lg-thinq.js -U -f com.lgeha.nuts
      ____
     / _  |   Frida 16.1.3 - A world-class dynamic instrumentation toolkit
