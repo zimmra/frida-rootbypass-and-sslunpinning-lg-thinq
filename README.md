@@ -30,6 +30,7 @@ This script successfully bypasses the root detection and allows for the SSL unpi
     - [Universal SafetyNet Fix](https://github.com/kdrag0n/safetynet-fix)
       - SafetyNet and Play Integrity modules
 - Install prerequisites and run mitmweb to view output in web-browser
+#### Steps  
 - Connect with ADB
   - `adb connect 127.0.0.1:58526`
 >```shell
