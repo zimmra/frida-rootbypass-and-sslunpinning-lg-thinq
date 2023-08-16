@@ -128,3 +128,10 @@ Security check bypassed, reporting NOT_ROOTED.
 ```
 
 SSL Unpinning formed from https://github.com/httptoolkit/frida-android-unpinning/
+
+
+## Maintanence and Update
+
+I probably won't be using this until I happen to get another LG device/appliance, so while this code works at the time of publishing it very well may not in the future as I won't be able to provide continuous support to it.
+
+Feel free to fork and/or submit a Pull Request for modifications needed due to future changes to the LG API, LG ThinQ app, or Android/WSA in general. 
