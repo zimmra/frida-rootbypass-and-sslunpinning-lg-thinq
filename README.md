@@ -1,9 +1,11 @@
 # frida-rootbypass-and-sslunpinning-lg-thinq
 Frida Script to bypass root detection and SSL Unpinning for mitm proxy listening for the LG ThinQ Android App
 
-Used with Windows Subsystem for Android (WSA) On Windows 11 - Rooted w/ Magisk & Google Play Store/Services
-
 I needed to inspect some of the commands sent over the LG ThinQ API, but any of the common SSL unpinning scripts triggered the LG app's root detection. 
+
+Used with Windows Subsystem for Android (WSA) On Windows 11 - Rooted w/ Magisk & Google Play Store/Services 
+
+ - [(See here for more info to setup)](https://github.com/LSPosed/MagiskOnWSALocal)
 
 This script successfully bypasses the root detection and allows for the SSL unpinning to occur, so the mitmproxy (or similar) can be used to view information sent to the API. 
 
